@@ -29,3 +29,5 @@ RUN docker-php-ext-configure \
     bcmath \
     soap \
     sockets
+
+RUN a2enmod rewrite
