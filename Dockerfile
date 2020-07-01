@@ -14,6 +14,7 @@ RUN apt-get update \
     wget \
     lynx \
     psmisc \
+    cron \
   && apt-get clean
 
 RUN docker-php-ext-configure \
@@ -31,3 +32,7 @@ RUN docker-php-ext-configure \
     sockets
 
 RUN a2enmod rewrite
+RUN a2enmod deflate
+RUN a2enmod headers
+RUN a2enmod security
+RUN a2enmod ssl
