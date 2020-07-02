@@ -34,5 +34,4 @@ RUN docker-php-ext-configure \
 RUN a2enmod rewrite
 RUN a2enmod deflate
 RUN a2enmod headers
-RUN a2enmod security
 RUN a2enmod ssl
