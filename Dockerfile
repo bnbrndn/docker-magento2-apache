@@ -39,8 +39,6 @@ RUN a2enmod deflate
 RUN a2enmod headers
 RUN a2enmod ssl
 
-RUN apt-get update && apt-get -y install cron
-
 COPY ./web/cron/crontab /etc/cron.d/m2-task
 RUN ./web/cron/crontab /etc/cron.d/m2-task
 RUN chmod 0644 /etc/cron.d/m2-task
