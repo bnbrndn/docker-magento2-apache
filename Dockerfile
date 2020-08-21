@@ -41,5 +41,3 @@ RUN a2enmod ssl
 
 COPY Crontab /etc/cron.d/m2-task
 RUN Crontab /etc/cron.d/m2-task
-RUN chmod 0644 /etc/cron.d/m2-task
-RUN service cron start
