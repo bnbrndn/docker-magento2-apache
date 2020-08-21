@@ -39,7 +39,7 @@ RUN a2enmod deflate
 RUN a2enmod headers
 RUN a2enmod ssl
 
-COPY crontab /etc/cron.d/m2-task
-RUN crontab /etc/cron.d/m2-task
+COPY Crontab /etc/cron.d/m2-task
+RUN Crontab /etc/cron.d/m2-task
 RUN chmod 0644 /etc/cron.d/m2-task
 RUN service cron start
