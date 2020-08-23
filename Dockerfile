@@ -18,7 +18,11 @@ RUN apt-get update \
     lynx \
     psmisc \
     cron \
-  && apt-get clean
+  && apt-get clean \
+  && a2enmod rewrite \
+     deflate \
+     headers \
+     ssl
 
 RUN docker-php-ext-configure \
     gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/; \
@@ -33,9 +37,4 @@ RUN docker-php-ext-configure \
     bcmath \
     soap \
     sockets
-
-RUN a2enmod rewrite
-RUN a2enmod deflate
-RUN a2enmod headers
-RUN a2enmod ssl
 
