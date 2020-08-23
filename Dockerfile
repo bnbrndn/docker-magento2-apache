@@ -39,17 +39,3 @@ RUN a2enmod deflate
 RUN a2enmod headers
 RUN a2enmod ssl
 
-# Copy hello-cron file to the cron.d directory
-COPY m2-task /etc/cron.d/m2-task
-
-# Give execution rights on the cron job
-RUN chmod 0644 /etc/cron.d/m2-task
-
-# Apply cron job
-RUN crontab /etc/cron.d/m2-task
-
-# Create the log file to be able to run tail
-RUN touch /var/log/cron.log
-
-# Run the command on container startup
-CMD cron && tail -f /var/log/cron.log
